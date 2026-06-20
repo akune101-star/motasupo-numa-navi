@@ -85,7 +85,11 @@ function renderCategories(){
       state.selectedId = btn.dataset.id;
       renderCategories();
       renderContent();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if(window.matchMedia("(max-width: 860px)").matches){
+        $("content").scrollIntoView({ behavior: "smooth", block: "start" });
+      }else{
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     });
   });
 }
@@ -147,7 +151,7 @@ function renderStandings(c, id){
     <section class="panel">
       <p class="eyebrow">Standings</p>
       <h2>${c.title} 最新順位メモ</h2>
-      <p class="notice">この順位欄は「上位だけを把握するためのメモ」です。正確な最新情報は公式リンクで確認してください。</p>
+      <p class="notice">上位の関係をつかむためのスナップショットです。開催中のセッションは未反映の場合があります。正確な最新情報は公式リンクで確認してください。</p>
       ${sourceBlock(st)}
       <div class="tableWrap" style="margin-top:14px">
         <table>
@@ -169,7 +173,7 @@ function renderHistory(c, id){
       <div style="margin-top:14px">
         ${items.map((e, i) => `
           <div class="era ${i === 0 ? "open" : ""}">
-            <button><span>${e.era}｜${e.title}</span><span>＋</span></button>
+            <button aria-expanded="${i === 0}"><span>${e.era}｜${e.title}</span><span aria-hidden="true">＋</span></button>
             <div class="eraBody">${e.body}</div>
           </div>
         `).join("")}
@@ -177,7 +181,10 @@ function renderHistory(c, id){
     </section>
   `;
   document.querySelectorAll(".era button").forEach(btn => {
-    btn.addEventListener("click", () => btn.parentElement.classList.toggle("open"));
+    btn.addEventListener("click", () => {
+      const isOpen = btn.parentElement.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen);
+    });
   });
 }
 
