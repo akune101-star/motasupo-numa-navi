@@ -159,12 +159,13 @@ h1 span{color:#ff443e}
 .pathwayLayout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:18px}
 .pathwayGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .pathwayCard,.porunekoCard{border:1px solid var(--line);border-radius:14px;position:relative;overflow:hidden;background:linear-gradient(140deg,rgba(21,34,49,.94),rgba(7,13,21,.96));box-shadow:0 16px 42px rgba(0,0,0,.28)}
-.pathwayCard{min-height:205px;padding:25px 22px 20px;transition:.22s ease}
-.pathwayCard::after{content:"";position:absolute;inset:0;background:var(--path-bg);opacity:.22;pointer-events:none}
+.pathwayCard{min-height:205px;padding:25px 22px 20px;transition:.22s ease;isolation:isolate}
+.pathwayCard::before{content:"";position:absolute;inset:0;z-index:-2;background:var(--path-img) center/cover no-repeat}
+.pathwayCard::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 90% 14%,var(--path-glow,transparent),transparent 46%),linear-gradient(90deg,rgba(5,7,11,.95) 0%,rgba(5,7,11,.80) 48%,rgba(5,7,11,.46) 100%)}
 .pathwayCard>*{position:relative;z-index:1}
-.storyPath{--path-bg:radial-gradient(circle at 88% 16%,#e23b35,transparent 40%),linear-gradient(120deg,transparent,#6e1619)}
-.beginnerPath{--path-bg:radial-gradient(circle at 88% 16%,#1ed7c6,transparent 36%),linear-gradient(120deg,transparent,#0d575d)}
-.historyPath{--path-bg:radial-gradient(circle at 88% 16%,#5d8bdb,transparent 36%),linear-gradient(120deg,transparent,#19325c)}
+.storyPath{--path-img:url("../assets/images/path-story.png");--path-glow:rgba(226,59,53,.32)}
+.beginnerPath{--path-img:url("../assets/images/path-beginner.png");--path-glow:rgba(30,215,198,.22)}
+.historyPath{--path-img:url("../assets/images/path-history.png");--path-glow:rgba(120,150,210,.16)}
 .pathwayCard:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.35)}
 .pathIcon{position:absolute;right:18px;top:15px;width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.07);font-size:25px;color:#fff}
 .pathwayCard small{font-size:9px;color:var(--accent2);font-weight:900;letter-spacing:.14em}.storyPath small{color:#ff655e}
