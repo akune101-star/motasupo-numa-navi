@@ -8,42 +8,112 @@
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-  <div class="app">
-    <header class="hero">
-      <div>
-        <p class="eyebrow">Motorsport Story Guide</p>
-        <h1>モタスポ沼ナビ</h1>
-        <p class="lead">F1は好き。でもWRC、WEC、SUPER GT、NASCARは何から見ればいいか分からない。そんな人のための“物語で入る”観戦ガイド。</p>
-      </div>
-      <div class="heroPanel">
-        <div class="heroPanelTitle"><b>観戦前、少しだけ夜更かし。</b><span class="versionBadge">v0.2</span></div>
-        <p>速報を追う場所ではありません。次のレースで誰を、何を見ればいいか。物語の地図を静かに広げます。</p>
-        <span id="globalUpdated">読み込み中...</span>
-      </div>
-    </header>
-
-    <nav class="topNav">
-      <button class="mode active" data-mode="story">今のストーリー</button>
-      <button class="mode" data-mode="deepDive">深掘り</button>
-      <button class="mode" data-mode="standings">最新順位メモ</button>
-      <button class="mode" data-mode="history">歴史</button>
-      <button class="mode" data-mode="people">人物・チーム</button>
-      <button class="mode" data-mode="beginner">初心者向け</button>
+  <header class="siteHeader">
+    <a class="brand" href="#home" aria-label="モタスポ沼ナビ ホーム">
+      <span class="brandMark" aria-hidden="true"><span>●</span></span>
+      <span><b>モタスポ沼ナビ</b><small>モータースポーツ初心者ガイド</small></span>
+    </a>
+    <nav class="siteNav" aria-label="メインナビゲーション">
+      <a class="active" href="#home">ホーム</a>
+      <a href="#categories">カテゴリ</a>
+      <a href="#reader" data-mode-link="history">歴史</a>
+      <a href="#reader" data-mode-link="beginner">初心者向け</a>
+      <a href="#about">About</a>
     </nav>
+  </header>
 
-    <div class="searchBox">
-      <input id="searchInput" placeholder="例：ラリー、耐久、日本、電動、オーバル、トヨタ" />
+  <main>
+    <section id="home" class="homeHero" aria-labelledby="heroTitle">
+      <div class="heroGlow" aria-hidden="true"></div>
+      <div class="heroCopy">
+        <p class="eyebrow">Late Night Motorsport Guide</p>
+        <h1 id="heroTitle">F1は好き。でも、<br>他のモタスポは<br>何から見ればいいか<span>分からない。</span></h1>
+        <p class="heroLead">今のストーリーと歴史から入る、<br>初心者向けモータースポーツ解説アプリ。</p>
+        <div class="heroActions">
+          <a class="primaryButton" href="#reader" data-mode-link="story"><span aria-hidden="true">▶</span> 今のストーリーを見る</a>
+          <a class="secondaryButton" href="#categories"><span aria-hidden="true">▦</span> カテゴリから探す</a>
+        </div>
+        <div class="heroStatus"><span class="onAirDot"></span> 今夜も静かに案内中 <b>v0.2</b></div>
+      </div>
+      <div class="heroScene" role="img" aria-label="深夜のガレージでレースの地図を広げるイメージ">
+        <div class="radioCard"><span>ON AIR</span><b>89.6</b><small>PORUNEKO PIT RADIO</small></div>
+        <div class="raceNote"><small>RACE NIGHT NOTE</small><b>速さの理由を、<br>ひとつずつ。</b></div>
+      </div>
+    </section>
+
+    <div class="homeShell">
+      <section id="categories" class="homeSection" aria-labelledby="categoryHeading">
+        <div class="sectionHeading">
+          <div><p class="eyebrow">Choose Your Entrance</p><h2 id="categoryHeading">カテゴリから探す</h2></div>
+          <p>まずは名前や雰囲気で選んで大丈夫。入口は、いつだって直感でいい。</p>
+        </div>
+        <div class="searchBox categorySearch">
+          <label class="srOnly" for="searchInput">カテゴリを検索</label>
+          <input id="searchInput" placeholder="例：ラリー、耐久、日本、電動、オーバル、トヨタ" />
+        </div>
+        <div id="categoryList" class="categoryList" aria-label="カテゴリー"></div>
+      </section>
+
+      <section class="homeSection pathways" aria-labelledby="pathwayHeading">
+        <div class="sectionHeading compact">
+          <div><p class="eyebrow">Pick A Route</p><h2 id="pathwayHeading">知るほど、もっと楽しくなる。</h2></div>
+        </div>
+        <div class="pathwayLayout">
+          <div class="pathwayGrid">
+            <a class="pathwayCard storyPath" href="#reader" data-mode-link="story">
+              <span class="pathIcon" aria-hidden="true">◉</span><small>NOW</small><h3>今のストーリー</h3>
+              <p>いま起きている注目の出来事や、シーズンの見どころをやさしく解説。</p><b>最新トピックを見る <span>›</span></b>
+            </a>
+            <a class="pathwayCard beginnerPath" href="#reader" data-mode-link="beginner">
+              <span class="pathIcon" aria-hidden="true">◇</span><small>FIRST STEP</small><h3>初心者向け</h3>
+              <p>ルールや用語、観戦の楽しみ方を、ゼロから分かりやすく。</p><b>ガイドを読む <span>›</span></b>
+            </a>
+            <a class="pathwayCard historyPath" href="#reader" data-mode-link="history">
+              <span class="pathIcon" aria-hidden="true">↶</span><small>HISTORY</small><h3>歴史から入る</h3>
+              <p>名勝負やレジェンド、カテゴリーの成り立ちから魅力を発見。</p><b>歴史をたどる <span>›</span></b>
+            </a>
+          </div>
+
+          <aside id="about" class="porunekoCard">
+            <p class="eyebrow">After Midnight</p>
+            <h3>夜の兄貴ぽるねこ</h3>
+            <p>眠れない夜に、好きなものを少し深く。レース、ゲーム、歴史、人生のこと。</p>
+            <a href="#" data-link-purpose="poruneko-home">ぽるねこホームへ <span>›</span></a>
+            <span class="catSilhouette" aria-hidden="true">●</span>
+          </aside>
+        </div>
+      </section>
+
+      <section class="featureStrip" aria-label="このアプリの特徴">
+        <p><span aria-hidden="true">☆</span> 初心者目線で丁寧に解説</p>
+        <p><span aria-hidden="true">◌</span> 中立的な視点でわかりやすく</p>
+        <p><span aria-hidden="true">♥</span> 推しが見つかると、もっと楽しい</p>
+      </section>
+
+      <section id="reader" class="readerSection" aria-labelledby="readerHeading">
+        <div class="readerIntro">
+          <div><p class="eyebrow">Open The Guide</p><h2 id="readerHeading">選んだカテゴリを、少し深く。</h2></div>
+          <span id="globalUpdated">読み込み中...</span>
+        </div>
+
+        <nav class="topNav" aria-label="読み物モード">
+          <button class="mode active" data-mode="story">今のストーリー</button>
+          <button class="mode" data-mode="deepDive">深掘り</button>
+          <button class="mode" data-mode="standings">最新順位メモ</button>
+          <button class="mode" data-mode="history">歴史</button>
+          <button class="mode" data-mode="people">人物・チーム</button>
+          <button class="mode" data-mode="beginner">初心者向け</button>
+        </nav>
+
+        <section id="content" class="content" aria-live="polite"></section>
+      </section>
     </div>
+  </main>
 
-    <main class="layout">
-      <aside id="categoryList" class="categoryList" aria-label="カテゴリー"></aside>
-      <section id="content" class="content" aria-live="polite"></section>
-    </main>
-
-    <footer class="footer">
-      <p>順位は入口、物語が本編。正確な最新順位と日程は、各ページの公式リンクでご確認ください。</p>
-    </footer>
-  </div>
+  <footer class="footer">
+    <a class="brand footerBrand" href="#home"><span class="brandMark" aria-hidden="true"><span>●</span></span><span><b>モタスポ沼ナビ</b><small>順位は入口、物語が本編。</small></span></a>
+    <p>正確な最新順位と日程は、各ページの公式リンクでご確認ください。</p>
+  </footer>
 
   <script type="module" src="./js/app.js"></script>
 </body>
