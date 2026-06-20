@@ -1,0 +1,198 @@
+{
+  "f1": {
+    "updatedAt": "2026-06-20",
+    "sourceName": "公式順位表を設定してください",
+    "sourceUrl": "",
+    "top": [
+      {
+        "rank": 1,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "Codexで公式順位表を確認して更新"
+      },
+      {
+        "rank": 2,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "公開前に必ず確認"
+      },
+      {
+        "rank": 3,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "上位5件まででOK"
+      }
+    ]
+  },
+  "wrc": {
+    "updatedAt": "2026-06-20",
+    "sourceName": "公式順位表を設定してください",
+    "sourceUrl": "",
+    "top": [
+      {
+        "rank": 1,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "Codexで公式順位表を確認して更新"
+      },
+      {
+        "rank": 2,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "公開前に必ず確認"
+      },
+      {
+        "rank": 3,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "上位5件まででOK"
+      }
+    ]
+  },
+  "wec": {
+    "updatedAt": "2026-06-20",
+    "sourceName": "公式順位表を設定してください",
+    "sourceUrl": "",
+    "top": [
+      {
+        "rank": 1,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "Codexで公式順位表を確認して更新"
+      },
+      {
+        "rank": 2,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "公開前に必ず確認"
+      },
+      {
+        "rank": 3,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "上位5件まででOK"
+      }
+    ]
+  },
+  "supergt": {
+    "updatedAt": "2026-06-20",
+    "sourceName": "公式順位表を設定してください",
+    "sourceUrl": "",
+    "top": [
+      {
+        "rank": 1,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "Codexで公式順位表を確認して更新"
+      },
+      {
+        "rank": 2,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "公開前に必ず確認"
+      },
+      {
+        "rank": 3,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "上位5件まででOK"
+      }
+    ]
+  },
+  "sformula": {
+    "updatedAt": "2026-06-20",
+    "sourceName": "公式順位表を設定してください",
+    "sourceUrl": "",
+    "top": [
+      {
+        "rank": 1,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "Codexで公式順位表を確認して更新"
+      },
+      {
+        "rank": 2,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "公開前に必ず確認"
+      },
+      {
+        "rank": 3,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "上位5件まででOK"
+      }
+    ]
+  },
+  "fe": {
+    "updatedAt": "2026-06-20",
+    "sourceName": "公式順位表を設定してください",
+    "sourceUrl": "",
+    "top": [
+      {
+        "rank": 1,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "Codexで公式順位表を確認して更新"
+      },
+      {
+        "rank": 2,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "公開前に必ず確認"
+      },
+      {
+        "rank": 3,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "上位5件まででOK"
+      }
+    ]
+  },
+  "nascar": {
+    "updatedAt": "2026-06-20",
+    "sourceName": "公式順位表を設定してください",
+    "sourceUrl": "",
+    "top": [
+      {
+        "rank": 1,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "Codexで公式順位表を確認して更新"
+      },
+      {
+        "rank": 2,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "公開前に必ず確認"
+      },
+      {
+        "rank": 3,
+        "name": "要更新",
+        "team": "-",
+        "points": "-",
+        "note": "上位5件まででOK"
+      }
+    ]
+  }
+}

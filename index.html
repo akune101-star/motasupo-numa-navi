@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>モタスポ沼ナビ</title>
+  <meta name="description" content="F1以外のモータースポーツも、今のストーリーと歴史から楽しむためのガイド。" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Motorsport Story Guide</p>
+        <h1>モタスポ沼ナビ</h1>
+        <p class="lead">F1は好き。でもWRC、WEC、SUPER GT、NASCARは何から見ればいいか分からない。そんな人のための“物語で入る”観戦ガイド。</p>
+      </div>
+      <div class="heroPanel">
+        <b>更新型Webアプリ v0.1</b>
+        <p>順位・ストーリー・歴史をJSONで管理。Codexに週1更新を頼みやすい構成です。</p>
+        <span id="globalUpdated">読み込み中...</span>
+      </div>
+    </header>
+
+    <nav class="topNav">
+      <button class="mode active" data-mode="story">今のストーリー</button>
+      <button class="mode" data-mode="standings">最新順位</button>
+      <button class="mode" data-mode="history">歴史</button>
+      <button class="mode" data-mode="people">人物・チーム</button>
+      <button class="mode" data-mode="beginner">初心者向け</button>
+    </nav>
+
+    <div class="searchBox">
+      <input id="searchInput" placeholder="例：ラリー、耐久、日本、電動、オーバル、トヨタ" />
+    </div>
+
+    <main class="layout">
+      <aside id="categoryList" class="categoryList" aria-label="カテゴリー"></aside>
+      <section id="content" class="content" aria-live="polite"></section>
+    </main>
+
+    <footer class="footer">
+      <p>このサイトは初心者向けの観戦ガイドです。順位や日程の最終確認は必ず公式サイトをご確認ください。</p>
+    </footer>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
