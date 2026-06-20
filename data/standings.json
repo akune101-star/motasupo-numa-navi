@@ -1,197 +1,295 @@
 {
   "f1": {
     "updatedAt": "2026-06-20",
-    "sourceName": "公式順位表を設定してください",
-    "sourceUrl": "",
+    "sourceName": "Formula 1 2026 Drivers' Standings",
+    "sourceUrl": "https://www.formula1.com/en/results/2026/drivers",
     "top": [
       {
         "rank": 1,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "Codexで公式順位表を確認して更新"
+        "name": "Andrea Kimi Antonelli",
+        "team": "Mercedes",
+        "points": 156,
+        "note": "新規則初年を若手が先導。チーム内比較も見どころ。"
       },
       {
         "rank": 2,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "公開前に必ず確認"
+        "name": "Lewis Hamilton",
+        "team": "Ferrari",
+        "points": 115,
+        "note": "Ferrariで首位を追う王座経験者。"
       },
       {
         "rank": 3,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "上位5件まででOK"
+        "name": "George Russell",
+        "team": "Mercedes",
+        "points": 106,
+        "note": "同じMercedesの首位と50点差。直接比較しやすい。"
+      },
+      {
+        "rank": 4,
+        "name": "Charles Leclerc",
+        "team": "Ferrari",
+        "points": 75,
+        "note": "Hamiltonとのチーム内争いもFerrariの物語になる。"
+      },
+      {
+        "rank": 5,
+        "name": "Lando Norris",
+        "team": "McLaren",
+        "points": 73,
+        "note": "前年王者が新規則で追う側に回った序盤。"
       }
     ]
   },
   "wrc": {
     "updatedAt": "2026-06-20",
-    "sourceName": "公式順位表を設定してください",
-    "sourceUrl": "",
+    "sourceName": "FIA 2026 WRC Drivers' Standings",
+    "sourceUrl": "https://www.fia.com/events/world-rally-championship/season-2026/standings",
     "top": [
       {
         "rank": 1,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "Codexで公式順位表を確認して更新"
+        "name": "Elfyn Evans",
+        "team": "Toyota GAZOO Racing WRT",
+        "points": 151,
+        "note": "第7戦ラリージャパン終了時点の首位。"
       },
       {
         "rank": 2,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "公開前に必ず確認"
+        "name": "Takamoto Katsuta",
+        "team": "Toyota GAZOO Racing WRT",
+        "points": 131,
+        "note": "母国戦を含む二勝で20点差につける。"
       },
       {
         "rank": 3,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "上位5件まででOK"
+        "name": "Oliver Solberg",
+        "team": "Toyota GAZOO Racing WRT",
+        "points": 102,
+        "note": "開幕戦勝者。ステージの速さを年間の安定へ変えたい。"
+      },
+      {
+        "rank": 4,
+        "name": "Sami Pajari",
+        "team": "Toyota GAZOO Racing WRT",
+        "points": 96,
+        "note": "若手が表彰台級の走りを積み上げる。"
+      },
+      {
+        "rank": 5,
+        "name": "Sébastien Ogier",
+        "team": "Toyota GAZOO Racing WRT",
+        "points": 90,
+        "note": "参戦数が限られても王者の得点効率は高い。"
       }
     ]
   },
   "wec": {
     "updatedAt": "2026-06-20",
-    "sourceName": "公式順位表を設定してください",
-    "sourceUrl": "",
+    "sourceName": "FIA WEC 2026 Hypercar Manufacturers' Standings",
+    "sourceUrl": "https://www.fiawec.com/en/page/manufacturers-classification",
     "top": [
       {
         "rank": 1,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "Codexで公式順位表を確認して更新"
+        "name": "Toyota",
+        "team": "Hypercar メーカー選手権",
+        "points": 132,
+        "note": "Le Mans後の首位。耐久の厚みを得点へ変えている。"
       },
       {
         "rank": 2,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "公開前に必ず確認"
+        "name": "BMW",
+        "team": "Hypercar メーカー選手権",
+        "points": 96,
+        "note": "36点差で追走。首位争いを一社にさせていない。"
       },
       {
         "rank": 3,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "上位5件まででOK"
+        "name": "Ferrari",
+        "team": "Hypercar メーカー選手権",
+        "points": 62,
+        "note": "大舞台の速さを年間得点へつなげたい位置。"
+      },
+      {
+        "rank": 4,
+        "name": "Alpine",
+        "team": "Hypercar メーカー選手権",
+        "points": 38,
+        "note": "表彰台圏を狙う中団メーカー争いの先頭。"
+      },
+      {
+        "rank": 5,
+        "name": "Cadillac",
+        "team": "Hypercar メーカー選手権",
+        "points": 32,
+        "note": "Alpineと6点差。北米勢の伸びも見どころ。"
       }
     ]
   },
   "supergt": {
     "updatedAt": "2026-06-20",
-    "sourceName": "公式順位表を設定してください",
-    "sourceUrl": "",
+    "sourceName": "SUPER GT 2026 GT500 ドライバーランキング",
+    "sourceUrl": "https://supergt.net/driver_ranking?gt_class=gt500&series=2026",
     "top": [
       {
         "rank": 1,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "Codexで公式順位表を確認して更新"
+        "name": "坪井翔 / 山下健太",
+        "team": "#36 TGR TEAM au TOM'S",
+        "points": 40,
+        "note": "第2戦終了時点で二戦連続20点。SWは80kg表示。"
       },
       {
         "rank": 2,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "公開前に必ず確認"
+        "name": "福住仁嶺 / 大嶋和也",
+        "team": "#14 TGR TEAM ENEOS ROOKIE",
+        "points": 24,
+        "note": "首位と16点差。安定して表彰台圏を追う。"
       },
       {
         "rank": 3,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "上位5件まででOK"
+        "name": "大湯都史樹 / 小林利徠斗",
+        "team": "#38 TGR TEAM KeePer CERUMO",
+        "points": 16,
+        "note": "開幕戦の好得点を持って序盤上位につける。"
+      },
+      {
+        "rank": 4,
+        "name": "平峰一貴 / Bertrand Baguette",
+        "team": "#12 TEAM IMPUL",
+        "points": 15,
+        "note": "Nissan勢の最上位。Toyota勢を追う入口になる。"
+      },
+      {
+        "rank": 5,
+        "name": "千代勝正 / 高星明誠",
+        "team": "#23 NISMO",
+        "points": 14,
+        "note": "同点勢の先頭。第2戦で11点を加えた。"
       }
     ]
   },
   "sformula": {
     "updatedAt": "2026-06-20",
-    "sourceName": "公式順位表を設定してください",
-    "sourceUrl": "",
+    "sourceName": "SUPER FORMULA 2026 Driver Standings",
+    "sourceUrl": "https://superformula.net/sf3/?lang=ja",
     "top": [
       {
         "rank": 1,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "Codexで公式順位表を確認して更新"
+        "name": "太田格之進",
+        "team": "DOCOMO TEAM DANDELION RACING",
+        "points": 52,
+        "note": "第5戦終了時点の首位。若手の完成度が光る。"
       },
       {
         "rank": 2,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "公開前に必ず確認"
+        "name": "岩佐歩夢",
+        "team": "TEAM MUGEN AUTOBACS",
+        "points": 37.5,
+        "note": "首位と14.5点差。海外経験を持つ追走者。"
       },
       {
         "rank": 3,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "上位5件まででOK"
+        "name": "福住仁嶺",
+        "team": "NTT docomo Business ROOKIE",
+        "points": 35,
+        "note": "第5戦勝者。2位まで2.5点の接戦。"
+      },
+      {
+        "rank": 4,
+        "name": "Sacha Fenestraz",
+        "team": "VANTELIN TEAM TOM'S",
+        "points": 26.5,
+        "note": "海外カテゴリー経験を国内トップへ持ち込む。"
+      },
+      {
+        "rank": 5,
+        "name": "阪口晴南",
+        "team": "SANKI VERTEX PARTNERS CERUMO・INGING",
+        "points": 23,
+        "note": "上位争いへ一勝で届く位置につける。"
       }
     ]
   },
   "fe": {
     "updatedAt": "2026-06-20",
-    "sourceName": "公式順位表を設定してください",
-    "sourceUrl": "",
+    "sourceName": "Formula E 2025/26 Drivers' Standings",
+    "sourceUrl": "https://www.fiaformulae.com/en/standings",
     "top": [
       {
         "rank": 1,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "Codexで公式順位表を確認して更新"
+        "name": "Mitch Evans",
+        "team": "Jaguar TCS Racing",
+        "points": 128,
+        "note": "モナコ第10戦終了時点。三亜戦当日の未確定結果は未反映。"
       },
       {
         "rank": 2,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "公開前に必ず確認"
+        "name": "Oliver Rowland",
+        "team": "Nissan Formula E Team",
+        "points": 109,
+        "note": "首位と19点差。モナコ第10戦の勝者。"
       },
       {
         "rank": 3,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "上位5件まででOK"
+        "name": "Edoardo Mortara",
+        "team": "Mahindra Racing",
+        "points": 103,
+        "note": "首位と25点差。Mahindraをタイトル圏へ運ぶ。"
+      },
+      {
+        "rank": 4,
+        "name": "Pascal Wehrlein",
+        "team": "Porsche Formula E Team",
+        "points": 101,
+        "note": "首位と27点差。上位四人が接近している。"
+      },
+      {
+        "rank": 5,
+        "name": "Nico Müller",
+        "team": "Porsche Formula E Team",
+        "points": 81,
+        "note": "Porsche勢二人目。チーム得点にも効く位置。"
       }
     ]
   },
   "nascar": {
     "updatedAt": "2026-06-20",
-    "sourceName": "公式順位表を設定してください",
-    "sourceUrl": "",
+    "sourceName": "NASCAR Cup Series 2026 Standings",
+    "sourceUrl": "https://www.nascar.com/standings/nascar-cup-series/",
     "top": [
       {
         "rank": 1,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "Codexで公式順位表を確認して更新"
+        "name": "Tyler Reddick",
+        "team": "23XI Racing",
+        "points": 704,
+        "note": "第16戦Pocono終了時点。レギュラーシーズン首位。"
       },
       {
         "rank": 2,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "公開前に必ず確認"
+        "name": "Denny Hamlin",
+        "team": "Joe Gibbs Racing",
+        "points": 685,
+        "note": "三連勝で首位との差を19点まで縮めた。"
       },
       {
         "rank": 3,
-        "name": "要更新",
-        "team": "-",
-        "points": "-",
-        "note": "上位5件まででOK"
+        "name": "Ryan Blaney",
+        "team": "Team Penske",
+        "points": 539,
+        "note": "Ford勢最上位。上位二人を追う基準になる。"
+      },
+      {
+        "rank": 4,
+        "name": "Chase Elliott",
+        "team": "Hendrick Motorsports",
+        "points": 509,
+        "note": "安定した得点でChase圏を固める。"
+      },
+      {
+        "rank": 5,
+        "name": "Ty Gibbs",
+        "team": "Joe Gibbs Racing",
+        "points": 506,
+        "note": "4位と3点差。若手がチーム内でも存在感を示す。"
       }
     ]
   }
