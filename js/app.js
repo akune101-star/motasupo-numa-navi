@@ -123,8 +123,12 @@ function renderCategories(){
       class="cat ${c.id === state.selectedId ? "active" : ""}"
       data-id="${c.id}"
       aria-pressed="${c.id === state.selectedId}"
-      style="--category-image:url('${categoryVisuals[c.id]?.image || ""}');--category-fallback:${categoryVisuals[c.id]?.fallback || "linear-gradient(145deg,#26364a,#07101a)"}"
     >
+      <span
+        class="catImage"
+        aria-hidden="true"
+        style="background-image:url('${categoryVisuals[c.id]?.image || ""}'),${categoryVisuals[c.id]?.fallback || "linear-gradient(145deg,#26364a,#07101a)"}"
+      ></span>
       <span class="icon" aria-hidden="true">${c.icon}</span>
       <span class="catContent">
         <span class="catTop">
