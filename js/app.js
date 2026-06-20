@@ -5,7 +5,8 @@ const state = {
   standings: {},
   stories: {},
   history: {},
-  people: {}
+  people: {},
+  deepDives: {}
 };
 
 const $ = (id) => document.getElementById(id);
@@ -18,12 +19,13 @@ async function loadJson(path){
 
 async function init(){
   try{
-    const [categories, standings, stories, history, people] = await Promise.all([
+    const [categories, standings, stories, history, people, deepDives] = await Promise.all([
       loadJson("./data/categories.json"),
       loadJson("./data/standings.json"),
       loadJson("./data/stories.json"),
       loadJson("./data/history.json"),
-      loadJson("./data/people.json")
+      loadJson("./data/people.json"),
+      loadJson("./data/deepDives.json")
     ]);
 
     state.categories = categories;
@@ -31,6 +33,7 @@ async function init(){
     state.stories = stories;
     state.history = history;
     state.people = people;
+    state.deepDives = deepDives;
 
     const newest = Object.values(standings)
       .map(x => x.updatedAt)
@@ -110,10 +113,77 @@ function renderContent(){
   const id = c.id;
 
   if(state.mode === "story") renderStory(c, id);
+  if(state.mode === "deepDive") renderDeepDive(c, id);
   if(state.mode === "standings") renderStandings(c, id);
   if(state.mode === "history") renderHistory(c, id);
   if(state.mode === "people") renderPeople(c, id);
   if(state.mode === "beginner") renderBeginner(c, id);
+}
+
+function renderDeepDive(c, id){
+  const d = state.deepDives[id];
+  if(!d){
+    $("content").innerHTML = `<section class="panel"><h2>${c.title} 深掘り</h2><p>読み物を準備中です。</p></section>`;
+    return;
+  }
+
+  const words = d.threeWords.map(word => `
+    <article class="termCard">
+      <small>KEY WORD</small>
+      <strong>${word.term}</strong>
+      <p>${word.meaning}</p>
+    </article>
+  `).join("");
+
+  const checklist = d.checklist.map((item, index) => `
+    <li class="checkItem">
+      <span class="checkNumber" aria-hidden="true">${index + 1}</span>
+      <div><strong>${item.label}</strong><p>${item.detail}</p></div>
+    </li>
+  `).join("");
+
+  const prompts = d.afterRace.prompts.map(prompt => `<li>${prompt}</li>`).join("");
+  const deepDiveTitle = id === "f1" ? "F1をもっと深く見るなら" : `F1好きなら、${c.title}のここを見ろ`;
+
+  $("content").innerHTML = `
+    <section class="panel deepHero">
+      <p class="eyebrow">From F1</p>
+      <h2>${c.icon} ${deepDiveTitle}</h2>
+      <h3>${d.f1Lens.title}</h3>
+      <p class="storyText">${d.f1Lens.body}</p>
+      ${sourceBlock(d)}
+    </section>
+
+    <div class="readingStack">
+      <section class="panel readingPanel">
+        <p class="eyebrow">Three Words</p>
+        <h3>まず覚える3ワード</h3>
+        <p class="sectionLead">全部は覚えなくていい。この三つが聞こえたら、レースの輪郭が少し濃くなります。</p>
+        <div class="glossaryGrid">${words}</div>
+      </section>
+
+      <section class="panel readingPanel">
+        <p class="eyebrow">Before The Race</p>
+        <h3>観戦前チェックリスト</h3>
+        <p class="sectionLead">中継が始まる前の五分で確認すること。答え合わせは、チェッカーのあとで。</p>
+        <ol class="checkList">${checklist}</ol>
+      </section>
+
+      <section class="panel readingPanel historyDoor">
+        <p class="eyebrow">History Door</p>
+        <span class="eraLabel">${d.historyEntry.era}</span>
+        <h3>${d.historyEntry.title}</h3>
+        <p class="storyText">${d.historyEntry.body}</p>
+      </section>
+
+      <section class="panel readingPanel afterglow">
+        <p class="eyebrow">After The Race</p>
+        <h3>${d.afterRace.title}</h3>
+        <p class="storyText">${d.afterRace.body}</p>
+        <ul class="afterPrompts">${prompts}</ul>
+      </section>
+    </div>
+  `;
 }
 
 function renderStory(c, id){
