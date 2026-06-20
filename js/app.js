@@ -11,6 +11,37 @@ const state = {
 
 const $ = (id) => document.getElementById(id);
 
+const categoryVisuals = {
+  f1: {
+    image: "./assets/images/category-f1.png",
+    fallback: "linear-gradient(145deg,#7d1b22,#121b27 56%,#07101a)"
+  },
+  wrc: {
+    image: "./assets/images/category-wrc.png",
+    fallback: "linear-gradient(145deg,#d8e6ed,#274758 45%,#101923)"
+  },
+  wec: {
+    image: "./assets/images/category-wec.png",
+    fallback: "linear-gradient(145deg,#224c67,#172938 46%,#090d14)"
+  },
+  supergt: {
+    image: "./assets/images/category-supergt.png",
+    fallback: "linear-gradient(145deg,#8b2527,#243245 52%,#090e16)"
+  },
+  sformula: {
+    image: "./assets/images/category-sformula.png",
+    fallback: "linear-gradient(145deg,#6d2730,#142a3e 52%,#080e16)"
+  },
+  fe: {
+    image: "./assets/images/category-formulae.png",
+    fallback: "linear-gradient(145deg,#164d70,#162b52 52%,#070e18)"
+  },
+  nascar: {
+    image: "./assets/images/category-nascar.png",
+    fallback: "linear-gradient(145deg,#bf642b,#31394a 48%,#0b1018)"
+  }
+};
+
 async function loadJson(path){
   const res = await fetch(path, { cache: "no-store" });
   if(!res.ok) throw new Error(`${path} を読み込めませんでした`);
@@ -44,10 +75,16 @@ async function init(){
     $("globalUpdated").textContent = newest ? `データ最終更新: ${newest}` : "データ更新日: 未設定";
 
     document.querySelectorAll(".mode").forEach(btn => {
-      btn.addEventListener("click", () => {
-        state.mode = btn.dataset.mode;
-        document.querySelectorAll(".mode").forEach(b => b.classList.toggle("active", b === btn));
-        renderContent();
+      btn.addEventListener("click", () => setMode(btn.dataset.mode));
+    });
+
+    document.querySelectorAll("[data-mode-link]").forEach(link => {
+      link.addEventListener("click", () => setMode(link.dataset.modeLink));
+    });
+
+    document.querySelectorAll(".siteNav a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.querySelectorAll(".siteNav a").forEach(item => item.classList.toggle("active", item === link));
       });
     });
 
@@ -71,15 +108,31 @@ function filteredCategories(){
   ].join(" ").toLowerCase().includes(q));
 }
 
+function setMode(mode){
+  state.mode = mode;
+  document.querySelectorAll(".mode").forEach(button => {
+    button.classList.toggle("active", button.dataset.mode === mode);
+  });
+  renderContent();
+}
+
 function renderCategories(){
   const list = filteredCategories();
   $("categoryList").innerHTML = list.map(c => `
-    <button class="cat ${c.id === state.selectedId ? "active" : ""}" data-id="${c.id}">
-      <div class="catHead">
-        <div class="catTitle"><span class="icon">${c.icon}</span><span>${c.title}</span></div>
-        <span class="tag">${c.tag}</span>
-      </div>
-      <p>${c.hook}</p>
+    <button
+      class="cat ${c.id === state.selectedId ? "active" : ""}"
+      data-id="${c.id}"
+      aria-pressed="${c.id === state.selectedId}"
+      style="--category-image:url('${categoryVisuals[c.id]?.image || ""}');--category-fallback:${categoryVisuals[c.id]?.fallback || "linear-gradient(145deg,#26364a,#07101a)"}"
+    >
+      <span class="icon" aria-hidden="true">${c.icon}</span>
+      <span class="catContent">
+        <span class="catTop">
+          <span class="catTitle ${c.title.length > 10 ? "long" : ""}">${c.title}</span>
+          <span class="tag">${c.tag}</span>
+        </span>
+        <span class="catDescription">${c.hook}</span>
+      </span>
     </button>
   `).join("");
 
@@ -88,11 +141,7 @@ function renderCategories(){
       state.selectedId = btn.dataset.id;
       renderCategories();
       renderContent();
-      if(window.matchMedia("(max-width: 860px)").matches){
-        $("content").scrollIntoView({ behavior: "smooth", block: "start" });
-      }else{
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }
+      $("reader").scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 }
