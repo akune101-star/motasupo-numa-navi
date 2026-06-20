@@ -50,7 +50,18 @@ a:hover{text-decoration:underline}
 }
 h1{font-size:clamp(34px,7vw,68px);line-height:1;margin:0 0 12px;letter-spacing:-.055em}
 .lead,.heroPanel p,.footer p{color:var(--muted);margin:0;line-height:1.75}
-.heroPanel b{display:block;font-size:22px;margin-bottom:8px}
+.heroPanelTitle{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px}
+.heroPanel b{display:block;font-size:22px}
+.versionBadge{
+  color:var(--accent2);
+  background:rgba(86,204,242,.10);
+  border:1px solid rgba(86,204,242,.28);
+  border-radius:999px;
+  padding:4px 9px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.06em;
+}
 #globalUpdated{
   display:inline-block;
   margin-top:14px;
@@ -166,6 +177,30 @@ td{font-size:14px}
   line-height:1.7;
   font-size:13px;
 }
+.deepHero h3,.readingPanel h3{font-size:clamp(21px,3vw,30px);line-height:1.35;margin:14px 0 10px;letter-spacing:-.025em}
+.readingStack{display:grid;gap:16px}
+.readingPanel{margin-bottom:0}
+.sectionLead{color:var(--muted);line-height:1.75;margin:0 0 16px;font-size:14px;max-width:68ch}
+.glossaryGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.termCard{
+  background:linear-gradient(145deg,rgba(86,204,242,.08),rgba(255,255,255,.04));
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+}
+.termCard small{display:block;color:var(--accent2);font-size:10px;font-weight:900;letter-spacing:.11em;margin-bottom:7px}
+.termCard strong{display:block;font-size:18px;margin-bottom:7px}
+.termCard p,.checkItem p{color:var(--muted);font-size:14px;line-height:1.75;margin:0}
+.checkList{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.checkItem{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;background:rgba(255,255,255,.045);border:1px solid var(--line);border-radius:16px;padding:13px}
+.checkItem strong{display:block;margin:1px 0 4px}
+.checkNumber{width:32px;height:32px;display:grid;place-items:center;border-radius:11px;color:#fff;background:linear-gradient(135deg,var(--accent),#ff8a4d);font-size:13px;font-weight:950}
+.historyDoor{background:linear-gradient(145deg,rgba(255,209,102,.09),rgba(18,24,39,.82))}
+.eraLabel{display:inline-block;color:#ffe7a3;border:1px solid rgba(255,209,102,.24);background:rgba(255,209,102,.08);border-radius:999px;padding:5px 10px;font-size:12px;font-weight:900}
+.afterglow{background:linear-gradient(145deg,rgba(149,117,255,.09),rgba(18,24,39,.82))}
+.afterPrompts{list-style:none;padding:0;margin:18px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.afterPrompts li{border:1px solid var(--line);background:rgba(255,255,255,.045);border-radius:15px;padding:12px;color:var(--muted);font-size:13px;line-height:1.6}
+.afterPrompts li::before{content:"余韻：";color:var(--accent2);font-weight:900}
 .footer{text-align:center;margin-top:20px;font-size:12px}
 @media(max-width:860px){
   .hero,.layout{grid-template-columns:1fr}
@@ -179,12 +214,13 @@ td{font-size:14px}
     padding:1px 1px 8px;
   }
   .cat{scroll-snap-align:start}
-  .cards,.people{grid-template-columns:1fr}
+  .cards,.people,.glossaryGrid,.afterPrompts{grid-template-columns:1fr}
 }
 @media(max-width:520px){
   .app{padding:12px 10px 32px}
   .hero>div,.panel{padding:18px}
-  .topNav{gap:7px}
-  .mode{padding:9px 11px;font-size:13px}
+  .topNav{gap:7px;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-inline:contain;padding-bottom:7px;scroll-snap-type:inline mandatory}
+  .mode{padding:9px 11px;font-size:13px;white-space:nowrap;scroll-snap-align:start}
   .storyText{font-size:16px}
+  .heroPanelTitle{align-items:flex-start}
 }

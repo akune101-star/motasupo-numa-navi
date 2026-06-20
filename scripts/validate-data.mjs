@@ -9,6 +9,7 @@ const standings = read("./data/standings.json");
 const stories = read("./data/stories.json");
 const history = read("./data/history.json");
 const people = read("./data/people.json");
+const deepDives = read("./data/deepDives.json");
 
 const ids = categories.map(c => c.id);
 const errors = [];
@@ -22,6 +23,7 @@ for (const id of ids) {
   if (!stories[id]) errors.push(`stories.json に ${id} がありません`);
   if (!history[id]) errors.push(`history.json に ${id} がありません`);
   if (!people[id]) errors.push(`people.json に ${id} がありません`);
+  if (!deepDives[id]) errors.push(`deepDives.json に ${id} がありません`);
 
   if (standings[id]) {
     if (!standings[id].updatedAt) errors.push(`standings.${id}: updatedAt がありません`);
@@ -53,6 +55,26 @@ for (const id of ids) {
 
   if (people[id] && (!Array.isArray(people[id]) || people[id].length < 3 || people[id].length > 5)) {
     errors.push(`people.${id}: 人物・チームは3〜5件にしてください`);
+  }
+
+  if (deepDives[id]) {
+    const d = deepDives[id];
+    for (const field of ["updatedAt", "sourceName", "sourceUrl", "f1Lens", "historyEntry", "afterRace"]) {
+      if (!d[field]) errors.push(`deepDives.${id}: ${field} がありません`);
+    }
+    if (!d.f1Lens?.title || !d.f1Lens?.body) errors.push(`deepDives.${id}: f1Lens の必須項目がありません`);
+    if (!Array.isArray(d.threeWords) || d.threeWords.length !== 3) errors.push(`deepDives.${id}: threeWords は3件にしてください`);
+    for (const [index, word] of (d.threeWords || []).entries()) {
+      if (!word.term || !word.meaning) errors.push(`deepDives.${id}.threeWords[${index}]: 必須項目がありません`);
+    }
+    if (!Array.isArray(d.checklist) || d.checklist.length !== 5) errors.push(`deepDives.${id}: checklist は5件にしてください`);
+    for (const [index, item] of (d.checklist || []).entries()) {
+      if (!item.label || !item.detail) errors.push(`deepDives.${id}.checklist[${index}]: 必須項目がありません`);
+    }
+    if (!d.historyEntry?.era || !d.historyEntry?.title || !d.historyEntry?.body) errors.push(`deepDives.${id}: historyEntry の必須項目がありません`);
+    if (!d.afterRace?.title || !d.afterRace?.body || !Array.isArray(d.afterRace?.prompts) || d.afterRace.prompts.length !== 3) {
+      errors.push(`deepDives.${id}: afterRace の必須項目がありません`);
+    }
   }
 }
 
