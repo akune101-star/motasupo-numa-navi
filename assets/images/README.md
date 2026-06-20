@@ -12,5 +12,6 @@
 - `category-sformula.png`
 - `category-formulae.png`
 - `category-nascar.png`
+- `poruneko-home.png`
 
 公式ロゴ、公式写真、実在チームのロゴや特徴的なカラーリングは使用しないでください。

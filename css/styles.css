@@ -76,11 +76,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
   position:relative;
   box-shadow:0 0 20px rgba(239,51,47,.15);
 }
-.brandMark::before,.brandMark::after{content:"";position:absolute;top:8px;width:11px;height:13px;background:#070b10;border:1px solid rgba(255,255,255,.6);transform:rotate(45deg);z-index:0}
-.brandMark::before{left:8px}.brandMark::after{right:8px;transform:rotate(-45deg)}
-.brandMark span{width:27px;height:23px;border:1px solid rgba(255,255,255,.75);border-radius:50% 50% 46% 46%;color:transparent;position:relative;z-index:1;background:
-  radial-gradient(circle at 31% 44%,#e9b85f 0 1.5px,transparent 2px),
-  radial-gradient(circle at 69% 44%,#e9b85f 0 1.5px,transparent 2px),#080c11}
+.brandMark span{display:none}
 .siteNav{display:flex;align-items:center;justify-content:flex-end;gap:clamp(18px,3vw,42px);font-size:13px;letter-spacing:.05em;white-space:nowrap}
 .siteNav a{color:#c8cdd5;padding:28px 2px 22px;border-bottom:2px solid transparent}
 .siteNav a:hover,.siteNav a.active{color:#fff;border-color:var(--accent)}
@@ -197,12 +193,12 @@ h1 span{color:#ff443e}
 .pathwayCard p,.porunekoCard p{color:#bdc5d0;font-size:13px;line-height:1.75;margin:0;max-width:30ch}
 .pathwayCard b{display:block;color:#f37770;font-size:11px;letter-spacing:.05em;margin-top:18px}.beginnerPath b{color:#50d9cc}.historyPath b{color:#79a9f4}
 .pathwayCard b span,.porunekoCard a span{float:right;font-size:18px;line-height:.7}
-.porunekoCard{padding:24px 22px;border-color:rgba(233,184,95,.5);background:radial-gradient(circle at 82% 100%,rgba(197,120,39,.25),transparent 9rem),linear-gradient(145deg,#1a1712,#0c1015 70%)}
+.porunekoCard{padding:24px 22px;border-color:rgba(233,184,95,.5);background:linear-gradient(145deg,#1a1712,#0c1015 70%);isolation:isolate}
+.porunekoCard::before{content:"";position:absolute;inset:0;z-index:-2;background:url("../assets/images/poruneko-home.png") center/cover no-repeat}
+.porunekoCard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,7,11,.94) 0%,rgba(5,7,11,.76) 55%,rgba(5,7,11,.22) 100%)}
 .porunekoCard .eyebrow{color:var(--warn)}.porunekoCard h3{color:#f3c46e}.porunekoCard p{max-width:22ch}
 .porunekoCard a{display:block;border-top:1px solid rgba(233,184,95,.28);color:#f0c36e;font-size:12px;font-weight:800;padding-top:13px;margin-top:19px;position:relative;z-index:2}
-.catSilhouette{position:absolute;right:13px;bottom:-23px;width:82px;height:94px;border-radius:48% 48% 42% 42%;background:#070a0d;color:transparent;border:1px solid rgba(233,184,95,.48);transform:rotate(-8deg)}
-.catSilhouette::before,.catSilhouette::after{content:"";position:absolute;top:-13px;width:27px;height:32px;background:#070a0d;border:1px solid rgba(233,184,95,.48);transform:rotate(40deg)}
-.catSilhouette::before{left:8px}.catSilhouette::after{right:8px;transform:rotate(-40deg)}
+.catSilhouette{display:none}
 
 .featureStrip{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:7px 0 40px;padding:16px 0}
 .featureStrip p{display:flex;align-items:center;justify-content:center;gap:12px;margin:0;color:#c9ced6;font-size:12px;letter-spacing:.07em;border-right:1px solid var(--line)}
